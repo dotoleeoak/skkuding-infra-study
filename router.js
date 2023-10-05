@@ -8,11 +8,6 @@ if (!fs.existsSync('user.json')) {
   fs.writeFileSync('user.json', '[]')
 }
 
-router.get('/', (req, res) => {
-  const html = fs.readFileSync('index.html', 'utf-8')
-  res.send(html)
-})
-
 router.post('/signup', (req, res) => {
   const username = req.body.username
   const password = req.body.password
